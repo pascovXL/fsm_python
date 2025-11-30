@@ -10,11 +10,6 @@
 
 Реализует поиск всех вхождений шаблона в тексте с учетом перекрывающихся вхождений.
 
-**Особенности:**
-- Использует алгоритм на основе конечного автомата
-- Поддерживает перекрывающиеся вхождения
-- Временная сложность: O(n + m), где n - длина текста, m - длина шаблона
-
 **Пример использования:**
 ```python
 from automata import find_pattern_occurrences
@@ -23,3 +18,16 @@ pattern = "ABA"
 text = "ABABABA"
 result = find_pattern_occurrences(pattern, text)
 print(result)  # [False, False, True, False, True, False, True]
+```
+### 2. Преобразование регулярных выражений в NFA
+
+Реализует алгоритм Томпсона для преобразования регулярных выражений в недетерминированные конечные автоматы.
+
+**Пример использования:**
+```python
+from automata import regex_to_nfa
+
+# Используйте raw-строки для регулярных выражений
+nfa_states, transitions, start_state, accept_state = regex_to_nfa(r"a|b*c")
+print(f"Состояний: {nfa_states}, Начальное: {start_state}, Принимающее: {accept_state}")
+```
